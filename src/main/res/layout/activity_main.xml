@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0a0a2e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#1a1a4e">
+
+        <Button
+            android:id="@+id/btnAddPlanet"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="➕ Планета"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnPresets"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🌟 Шаблоны"
+            android:backgroundTint="#2196F3"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="#1a1a4e">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="▶️ СТАРТ"
+                android:backgroundTint="#4CAF50"/>
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="⏹️ СТОП"
+                android:backgroundTint="#f44336"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="🗑️"
+                android:backgroundTint="#FF9800"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnZoomOut"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="➖"
+                android:backgroundTint="#9C27B0"/>
+
+            <TextView
+                android:id="@+id/tvZoom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Zoom: 1.0x"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/btnZoomIn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="➕"
+                android:backgroundTint="#9C27B0"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnResetZoom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="🔍"
+                android:backgroundTint="#9C27B0"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Лимит:"
+                android:textColor="#fff"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/etPlanetLimit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:inputType="number"
+                android:textColor="#fff"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/btnSetLimit"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:backgroundTint="#607D8B"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPlanetCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Планет: 1/10"
+            android:textColor="#aaa"
+            android:gravity="center"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/panelManual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="#2a2a5e"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📝 Ручное добавление"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название"
+            android:textColor="#fff"
+            android:textColorHint="#aaa"
+            android:background="#fff"
+            android:padding="6dp"
+            android:layout_marginBottom="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etX"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="X (млн км)"
+                android:inputType="numberSigned"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginEnd="2dp"/>
+
+            <EditText
+                android:id="@+id/etY"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Y (млн км)"
+                android:inputType="numberSigned"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/etVx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Vx (км/с)"
+                android:inputType="numberSigned"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginEnd="2dp"/>
+
+            <EditText
+                android:id="@+id/etVy"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Vy (км/с)"
+                android:inputType="numberSigned"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/etMass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Масса (×10²⁴ кг)"
+                android:inputType="numberDecimal"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginEnd="2dp"/>
+
+            <EditText
+                android:id="@+id/etRadius"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Радиус (px)"
+                android:inputType="numberDecimal"
+                android:textColor="#000"
+                android:background="#fff"
+                android:padding="6dp"
+                android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btnConfirmAdd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="✅ Добавить"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnCancelAdd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="❌ Отмена"
+                android:backgroundTint="#f44336"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.example.planetemulator.SpaceView
+        android:id="@+id/spaceView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
